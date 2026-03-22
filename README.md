@@ -43,4 +43,4 @@
 -   **Persistence**: Your data stays even after a refresh!
 
 ---
-*Created by [Khushkamal Singh](https://github.com/khushkamal) with ❤️ for the Developer Community.*
+*Created by [Khushkamal Singh](https://github.com/khushkamal) with ❤️ for the Developer.*
