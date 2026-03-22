@@ -1,16 +1,46 @@
-# React + Vite
+# Zen-Geo | Focus & Map Your Journey 🧘‍♂️📍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Zen-Geo Banner](./banner.png)
 
-Currently, two official plugins are available:
+**Zen-Geo** is a premium, unique productivity application that combines a gamified Pomodoro timer with location-based memory mapping. Designed for developers and thinkers, it helps you stay focused while documenting your physical and mental journey on an interactive map.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
 
-## React Compiler
+-   **Interactive Dark-Mode Map**: A sleek, high-contrast map (via Leaflet) to pin your memories and "Focus Zones."
+-   **Gamified Pomodoro Timer**: A functional 25-minute timer with a glassmorphic design that scales with your focus.
+-   **Zen Garden**: Watch your virtual garden grow! Every completed session adds a tree to your dashboard.
+-   **Geo-Notes**: Click any spot on the map to save a persistent note (stored via LocalStorage).
+-   **Glassmorphism Branding**: A premium UI built with **Tailwind CSS 4** and **Framer Motion**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+-   **Frontend**: React 19 + Vite
+-   **Styling**: Tailwind CSS 4 (Utility-first)
+-   **Animations**: Framer Motion
+-   **Mapping**: Leaflet & React-Leaflet
+-   **Icons**: Lucide React
+-   **Persistence**: Browser LocalStorage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Getting Started
+
+1.  **Clone the repo**:
+    ```bash
+    git clone https://github.com/khushkamal/note-Geo.git
+    ```
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+
+## 📸 Screenshots
+
+-   **Dashboard**: Premium dark theme with real-time map integration.
+-   **Garden View**: Visual representation of your focus history.
+-   **Persistence**: Your data stays even after a refresh!
+
+---
+*Created by [Khushkamal Singh](https://github.com/khushkamal) with ❤️ for the Developer Community.*
