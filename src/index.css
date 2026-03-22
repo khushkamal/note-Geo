@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(210 100% 50%);
+  --color-background: hsl(222 47% 11%);
+  --color-foreground: hsl(213 31% 91%);
+  --color-glass: rgba(15, 23, 42, 0.8);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --radius-custom: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[var(--color-glass)] backdrop-blur-xl border border-[var(--color-glass-border)] shadow-2xl;
+  }
+  
+  .premium-gradient {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  }
+  
+  .accent-text {
+    @apply bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent;
+  }
+}
+
+/* Custom Scrollbar (kept as standard CSS) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(222 47% 11%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(217 33% 18%);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(213 27% 84%);
+}
