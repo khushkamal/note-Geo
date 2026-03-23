@@ -27,6 +27,14 @@
   .accent-text {
     @apply bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent;
   }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-blue-500/20 rounded-full hover:bg-blue-500/40 transition-colors;
+  }
 }
 
 /* Custom Scrollbar (kept as standard CSS) */

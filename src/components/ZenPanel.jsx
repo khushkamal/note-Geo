@@ -3,7 +3,7 @@ import { Play, Pause, RotateCcw, TreePine, MapPin, ClipboardList } from 'lucide-
 import { motion } from 'framer-motion';
 import GardenView from './GardenView';
 
-const ZenPanel = ({ treeCount, onTreeGrow, notes }) => {
+const ZenPanel = ({ trees = [], onTreeGrow, notes, selectedLocation }) => {
   const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [isActive, setIsActive] = useState(false);
 
@@ -16,7 +16,7 @@ const ZenPanel = ({ treeCount, onTreeGrow, notes }) => {
     } else if (timeLeft === 0) {
       clearInterval(interval);
       setIsActive(false);
-      onTreeGrow(); // User finished a session!
+      onTreeGrow(); // Location is handled in App.jsx via current state
       setTimeLeft(25 * 60);
     } else {
       clearInterval(interval);
@@ -31,7 +31,7 @@ const ZenPanel = ({ treeCount, onTreeGrow, notes }) => {
   };
 
   return (
-    <div className="w-[400px] h-full flex flex-col p-10 z-[1000] border-l border-glass-border glass">
+    <div className="w-[400px] h-full flex flex-col p-10 z-[1000] border-l border-glass-border glass overflow-y-auto custom-scrollbar">
       <div className="mb-12">
         <h1 className="text-4xl font-extrabold tracking-tighter accent-text">Zen-Geo</h1>
         <p className="opacity-70">Focus & Map your journey</p>
@@ -54,6 +54,10 @@ const ZenPanel = ({ treeCount, onTreeGrow, notes }) => {
             <RotateCcw size={24} />
           </button>
         </div>
+
+        {selectedLocation && (
+          <p className="mt-4 text-xs opacity-40">Planting at: {selectedLocation}</p>
+        )}
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-8">
@@ -61,7 +65,7 @@ const ZenPanel = ({ treeCount, onTreeGrow, notes }) => {
           <TreePine className="text-blue-400" />
           <div className="stat-info">
             <span className="text-[0.8rem] opacity-60">Trees Grown</span>
-            <strong className="block text-xl">{treeCount}</strong>
+            <strong className="block text-xl">{trees.length}</strong>
           </div>
         </div>
         <div className="p-6 rounded-radius-custom flex flex-col gap-2 glass">
@@ -73,7 +77,7 @@ const ZenPanel = ({ treeCount, onTreeGrow, notes }) => {
         </div>
       </div>
 
-      <GardenView treeCount={treeCount} />
+      <GardenView treeCount={trees.length} />
 
       <div className="mt-12">
         <h3 className="flex items-center gap-2 text-base mb-4 opacity-80"><ClipboardList size={18} /> Recent Notes</h3>
